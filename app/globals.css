@@ -2,26 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@font-face {
+    font-family: 'Fb Practica';
+    src: url('/path/to/font/FbPractica-Regular.ttf') format('truetype');
+    /* Add other font formats and font weights if available */
   }
+  
+  body {
+    font-family: 'Fb Practica', sans-serif;
+  }
+  /* Move number input arrow buttons to the left */
+/* You might need to adjust the padding values based on your design */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  position: absolute;
+  left: 0;
+  background-color: white; /* Set background color of the buttons */
+  padding: 0.25rem; /* Adjust padding as needed */
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* Align number input text to the right */
+input[type="number"] {
+  text-align: right;
+  /* Add more styles as needed */
 }
